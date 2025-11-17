@@ -23,7 +23,7 @@ item_pattern = re.compile(
     r'(?:\s*\(?\$?\s*([\d\s,]+(?:\.\d{2})?)\)?\s*)?$' # (6) price 2
 )
 
-sub_contractor_list = {'D9': ['D','F'], 'I9': ['I', 'K'], 'N9': ['N', 'P'], 'S9': ['S', 'U'], 'X9': ['X', 'Z'], 'AC9': ['AC', 'AE'], 'AH9': ['AH', 'AJ'], 'AM9': ['AM', 'AO']}
+sub_contractor_list = {'D9': ['D','F'], 'I9': ['I', 'K'], 'O9': ['O', 'Q'], 'T9': ['T', 'V'], 'Y9': ['Y', 'AA'], 'AD9': ['AD', 'AF']}
 
 
 sections = {}
@@ -85,7 +85,7 @@ def write_to_temp():
     match_count = 0
     # Pre-load Excel descriptions so we don't scan column B thousands of times
     excel_desc_cells = []
-    for col in ws.iter_cols(min_col=2, max_col=2, min_row=16, max_row=604):
+    for col in ws.iter_cols(min_col=2, max_col=2, min_row=16, max_row=626):
         for cell in col:
             if cell.value:
                 excel_desc_cells.append((cell.row, str(cell.value).strip()))
