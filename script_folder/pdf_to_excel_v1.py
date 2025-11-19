@@ -121,6 +121,8 @@ def write_to_temp():
                     ws.cell(row=row, column=unit_price_col).value = price1
                     match_count += 1
                     print(f"[{match_count}] MATCH: {excel_desc} and {pdf_desc} → Row {row} | Qty={qty} | Price={price1}")
+                    break
+                    
     wb.save(output_template_excel)
     print(f"Data saved to {output_template_excel}")
 
@@ -129,3 +131,4 @@ scan_pdf()
 write_to_empty()
 write_to_temp()
 print("------------DONE------------------")
+
